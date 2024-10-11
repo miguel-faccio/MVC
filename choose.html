@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Solo - Escolher Dificuldade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Escolha o Nivel de Dificuldade</h1>
+    <div class="menu">
+        <button class="menu-btn" onclick="startGame('fácil')">facil</button>
+        <button class="menu-btn" onclick="startGame('médio')">medio</button>
+        <button class="menu-btn" onclick="startGame('difícil')">dificil</button>
+    </div>
+</div>
+<footer></footer>
+
+<script>
+    function startGame(dificuldade) {
+        localStorage.setItem('dificuldade', dificuldade); // Armazena a dificuldade escolhida
+        window.location.href = "game.html";  // Redireciona para o jogo
+    }
+</script>
+</body>
+</html>

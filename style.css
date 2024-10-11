@@ -1,0 +1,163 @@
+/* Define o estilo da página inspirado em Undertale */
+@font-face {
+    font-family: bit;
+    src: url("8_bit_hud/8-bit-hud.ttf");
+}
+body {
+    font-family: 'Press Start 2P', sans-serif; /* Fonte pixelada */
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.menu {
+    text-align: center;
+}
+/* Estilo dos botões inspirado nos botões ACT de Undertale */
+.menu-btn {
+    background-color: #000000; /* Cor laranja vibrante */
+    color: #ff6a00;
+    border: 2px solid #ff6a00;  /* Borda branca */
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'bit'; /* Mantendo a fonte pixelada */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.menu-btn:hover {
+    background-color: #000000; /* Um laranja mais escuro ao passar o mouse */
+    color:  yellow; /* O texto muda para preto no hover */
+    border-color: yellow; /* A borda se torna amarela para destacar o botão no hover */
+}
+
+.menu-btn:active {
+    transform: scale(0.95); /* Efeito de clique (diminui um pouco o tamanho) */
+}
+.container {
+    text-align: center;
+    border: 2px solid white;
+    padding: 20px;
+    width: 80%; /* Já está definida a largura */
+    max-width: 900px;
+    background-color: black;
+    margin: 0 auto;
+    /* Vamos ajustar a largura */
+}
+
+h1 {
+    font-family: 'bit';
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px; /* Adicionando um padding horizontal */
+}
+/* Rodapé com efeito de aura */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: black; /* Pode ser transparente ou outra cor */
+    box-shadow: 0 0 40px 40px rgba(255, 0, 0, 0.7); /* Luz vermelha inicial */
+    animation: pulse 3s infinite; /* Animação de pulsação */
+}
+
+/* Definindo a animação de pulsação da aura */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.7); /* Luz intensa no início */
+    }
+    50% {
+        box-shadow: 0 0 40px 40px rgba(255, 0, 0, 0.4); /* Expansão da aura */
+    }
+    100% {
+        box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.7); /* Retorno ao estado inicial */
+    }
+}
+
+/* Garantir que o rodapé esteja sempre no fim da tela */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* Estilo do tabuleiro de jogo */
+.game-board {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.game-board.easy {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no modo fácil */
+}
+
+.game-board.medium {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no modo médio */
+}
+
+.game-board.hard {
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas no modo difícil */
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    border: 2px solid #ff6200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card.flipped {
+    background-color: black;
+    color: #ffc400;
+    border: 2px solid #ffc400;
+}
+
+.card:hover {
+    background-color: #333;
+}
+/* Estilo do Modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: black;
+    border: 2px solid white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#close-modal, #restart-game {
+    margin-top: 20px; /* Margem para os botões */
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Fonte estilo pixel art */
